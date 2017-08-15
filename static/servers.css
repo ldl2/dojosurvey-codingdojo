@@ -27,3 +27,6 @@ form button{
   background-color: #a6bbdd;
   color:white;
 }
+form h3{
+  text-decoration: underline;
+}

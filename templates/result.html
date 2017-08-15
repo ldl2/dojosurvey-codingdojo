@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="/static/servers.css">
 </head>
 <body>
-  <form>
+  <form action="/" method="get">
+    <h3>Submitted Info</h3>
     <p>
       Your Name:  {{name}}
     </p>
@@ -21,6 +22,7 @@
     <p>
       Comment: (optional)  {{comment}}
     </p>
+    <button type="submit"> Go Back </button>
   </form>
 </body>
 </html>
