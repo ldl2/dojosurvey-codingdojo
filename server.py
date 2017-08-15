@@ -5,17 +5,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route('/result')
-def result():
+@app.route('/result', methods=['POST'])
+def button():
     name = request.form["name"]
     location = request.form["location"]
     language = request.form["language"]
     comment = request.form["comment"]
-    print(comment, language, location, name)
-    return render_template("result.html", name=name)
+    return render_template('/result.html', name=name, location=location, language=language, comment=comment)
 
-@app.route('/button', methods=['POST'])
-def button():
-    return redirect('/result')
+
 
 app.run(debug=True)
