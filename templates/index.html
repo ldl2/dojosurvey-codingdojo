@@ -8,15 +8,22 @@
   <link rel="stylesheet" href="/static/servers.css">
 </head>
 <body>
-  <form action="/result" method="post">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% block body %}{% endblock %}
+  <form action="/preresult" method="post">
     <p>
       Your Name:
-
       <input type="text" name="name"></input>
     </p>
     <p>
       Dojo Location:
-
       <select name="location">
         <option value=""></option>
         <option value="Seattle">Seattle</option>
@@ -42,7 +49,7 @@
       </select>
     </p>
     <p>
-      Comment: (optional)
+      Comment: (max:120 char)
     </p>
     <textarea class="box" name="comment"> </textarea>
     <button type="submit">Submit</button>

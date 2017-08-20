@@ -8,19 +8,20 @@
   <link rel="stylesheet" href="/static/servers.css">
 </head>
 <body>
+
   <form action="/" method="get">
     <h3>Submitted Info</h3>
     <p>
-      Your Name:  {{name}}
+      Your Name:  {{session['name']}}
     </p>
     <p>
-      Dojo Location:  {{location}}
+      Dojo Location:  {{session['location']}}
     </p>
     <p>
-      Favorite Language:  {{language}}
+      Favorite Language:  {{session['language']}}
     </p>
     <p>
-      Comment: (optional)  {{comment}}
+      Comment: (optional)  {{session['comment']}}
     </p>
     <button type="submit"> Go Back </button>
   </form>
